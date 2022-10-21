@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/manytomanybidirectional</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		 <!-- JDBC connection pool settings ... using built-in test pool -->
+        <property name="connection.pool_size">2</property>
+          <!-- Select our SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<!-- To create table automatic -->
+		<!-- create is used only once for creation of table  if the table is exist create drop existing table and create new table-->
+		<!-- once you use create then change it create to update  it only update the values in the existing table-->
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		 
+		<!-- 
+	   <mapping class="com.hibernate.mapping.onetoone.Trainer"/>
+		<mapping class="com.hibernate.mapping.onetoone.Student"/> -->
+			
+		  
+		 <!-- 
+		  <mapping class="com.hibernate.mapping.onetomany.Questions"/>
+		<mapping class="com.hibernate.mapping.onetomany.Answer"/> 
+		 -->
+		 
+		  <!-- <mapping class="com.hibernate.mapping.manytomany.Employee"/>
+		<mapping class="com.hibernate.mapping.manytomany.Department"/>  -->
+	<!-- 	
+		<mapping class="com.hibernate.mapping.manytomany.Employee"/>
+		<mapping class="com.hibernate.mapping.manytomany.Department"/> 
+		 -->
+		 
+<!-- 		 <mapping class="com.namequery.Lerner"/>
+ -->
+ 		 <mapping class="com.criteria.query.Employee"/>
+ 
+ 	
+ </session-factory>
+	</hibernate-configuration>
+	
